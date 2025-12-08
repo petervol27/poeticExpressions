@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #1a1a1a; /* dark contrast for pink */
+  direction: rtl;
+  padding-bottom: 40px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.headertxt {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #ff66b2;
+  /* text-shadow: 0 0 2px #ff99c9, 0 0 5px #ff66b2; softer glow */
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.2; /* makes it wrap nicely on mobile */
+}
+
+.quote {
+  background: rgba(255, 255, 255, 0.1); /* slightly transparent dark overlay */
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(255, 102, 178, 0.3);
+  text-align: center; /* center text inside each card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255, 102, 178, 0.4);
+}
+
+.quote p {
+  font-size: 18px;
+  color: #ff99cc;
+  line-height: 1.6;
+  white-space: pre-line; /* keep line breaks */
+  font-weight: 500;
+}
