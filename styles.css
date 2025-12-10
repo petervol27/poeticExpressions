@@ -50,3 +50,17 @@ body {
   white-space: pre-line; /* keep line breaks */
   font-weight: 500;
 }
+
+.poem-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  background-color: #333;
+  color: #ff99cc;
+  box-shadow: 0 0 6px #ff66b2;
+}
