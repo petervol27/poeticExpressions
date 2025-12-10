@@ -19,9 +19,31 @@ function renderPoems(list) {
     const quoteDiv = document.createElement('div');
     quoteDiv.classList.add('quote');
 
+    // Circle number badge
+    const num = document.createElement('div');
+    num.textContent = poemsData.indexOf(item) + 1;
+
+    Object.assign(num.style, {
+      width: '40px',
+      height: '40px',
+      borderRadius: '50%',
+      backgroundColor: '#ff7bbf',
+      color: 'white',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      margin: '0 auto 12px auto',
+      fontSize: '18px',
+      fontWeight: 'bold',
+      textShadow: '0 0 5px rgba(255, 255, 255, 0.6)',
+      boxShadow: '0 0 10px rgba(255, 0, 150, 0.4)',
+    });
+
+    // Poem text
     const p = document.createElement('p');
     p.textContent = item.poem;
 
+    quoteDiv.appendChild(num);
     quoteDiv.appendChild(p);
     container.appendChild(quoteDiv);
   });
