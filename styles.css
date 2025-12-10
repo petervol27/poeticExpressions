@@ -64,3 +64,28 @@ body {
   color: #ff99cc;
   box-shadow: 0 0 6px #ff66b2;
 }
+
+/* badge */
+.num-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff7bbf, #ff4fa3);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(255, 60, 150, 0.25);
+}
+
+/* ensure the badge is centered and separated from the poem text */
+.quote .num-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
