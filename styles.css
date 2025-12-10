@@ -52,9 +52,9 @@ body {
 }
 
 .poem-input {
-  width: 100%;
+  width: 30%;
   padding: 12px;
-  margin-bottom: 20px;
+  margin: 20px 138px;
   border-radius: 8px;
   border: none;
   font-size: 16px;
