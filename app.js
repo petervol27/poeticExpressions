@@ -4,6 +4,13 @@ fetch('poems.json')
   .then((res) => res.json())
   .then((data) => {
     poemsData = data;
+
+    // set count ONCE on load
+    const counter = document.getElementById('poems-count');
+    if (counter) {
+      counter.textContent = `✦ ${data.length} Поэм ✦`;
+    }
+
     renderPoems(data); // initial render of all
   })
   .catch((err) => console.error('Error loading poems:', err));
@@ -19,24 +26,14 @@ function renderPoems(list) {
     const quoteDiv = document.createElement('div');
     quoteDiv.classList.add('quote');
 
-    // Wrapper for badge (helps center it reliably)
     const numWrapper = document.createElement('div');
     numWrapper.classList.add('num-wrapper');
 
     const num = document.createElement('div');
     num.classList.add('num-badge');
 
-    // Determine the real index in poemsData (safe fallback)
-    const realIndex = Array.isArray(poemsData) ? poemsData.indexOf(item) : -1;
-    // If indexOf fails (different object refs), try to find by matching text
-    const idx =
-      realIndex >= 0
-        ? realIndex
-        : Array.isArray(poemsData)
-        ? poemsData.findIndex((p) => p.poem === item.poem)
-        : -1;
-
-    num.textContent = idx >= 0 ? idx + 1 : ''; // show number or blank if unknown
+    const idx = poemsData.findIndex((p) => p.poem === item.poem);
+    num.textContent = idx >= 0 ? idx + 1 : '';
 
     numWrapper.appendChild(num);
     quoteDiv.appendChild(numWrapper);
@@ -54,15 +51,13 @@ document.getElementById('poemInput').addEventListener('input', (e) => {
   const value = e.target.value;
 
   if (value === '') {
-    // Input cleared → show all
     renderPoems(poemsData);
   } else {
-    const index = parseInt(value) - 1; // user enters 1-based index
+    const index = parseInt(value, 10) - 1;
 
     if (!isNaN(index) && poemsData[index]) {
       renderPoems([poemsData[index]]);
     } else {
-      // If number is invalid → show none
       renderPoems([]);
     }
   }

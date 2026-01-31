@@ -35,7 +35,9 @@ body {
   margin-bottom: 20px;
   box-shadow: 0 4px 12px rgba(255, 102, 178, 0.3);
   text-align: center; /* center text inside each card */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .quote:hover {
@@ -88,4 +90,19 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 8px;
+}
+
+.poems-count {
+  text-align: center;
+  margin: 8px 0 16px;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: Georgia, 'Times New Roman', serif;
+  user-select: none;
+}
+
+.poems-count {
+  color: #c9b7b7;
+  font-style: italic;
 }
